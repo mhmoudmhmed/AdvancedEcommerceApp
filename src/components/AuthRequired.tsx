@@ -1,6 +1,6 @@
 import React from "react";
 import { useFocusEffect } from "@react-navigation/native";
-import { useSelector, useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
 import { useNavigation, CommonActions } from "@react-navigation/native";
 import { RootState } from "../store";
 import { StackNavigationProp } from "@react-navigation/stack";

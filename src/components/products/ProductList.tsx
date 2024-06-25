@@ -1,10 +1,5 @@
-import React, { useCallback, useEffect, useState } from "react";
-import {
-  ActivityIndicator,
-  FlatList,
-  TouchableOpacity,
-  View,
-} from "react-native";
+import React, { useCallback, useState } from "react";
+import { ActivityIndicator, FlatList, TouchableOpacity } from "react-native";
 import styled from "styled-components/native";
 import { useSelector } from "react-redux";
 import { fetchProducts } from "../../store/productsSlice";
@@ -19,6 +14,7 @@ import Animated, { FadeIn, FadeOut } from "react-native-reanimated";
 import { useDispatch } from "react-redux";
 import { logout } from "../../store/authSlice";
 import Header from "../header";
+import NetInfo from "@react-native-community/netinfo";
 
 type RootStackParamList = {
   ProductDetails: { productId: number };
@@ -42,7 +38,13 @@ const ProductList: React.FC = () => {
         setIsLoading(false);
       };
 
-      fetchData();
+      const unsubscribe = NetInfo.addEventListener((state) => {
+        if (state.isConnected) {
+          fetchData();
+        }
+      });
+
+      return () => unsubscribe();
     }, [dispatch])
   );
 

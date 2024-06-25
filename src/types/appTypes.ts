@@ -30,3 +30,11 @@ export type LoginData = {
   username: string;
   password: string;
 };
+
+export type signUpData = {
+  username: string;
+  password: string;
+  email: string;
+  confirm_password: string;
+  phone_number: string;
+};

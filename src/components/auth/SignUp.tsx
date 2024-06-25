@@ -3,7 +3,7 @@ import { ActivityIndicator, Alert, Text } from "react-native";
 import axios from "axios";
 import { StackNavigationProp } from "@react-navigation/stack";
 import styled from "styled-components/native";
-import { StackParamList } from "../../types/appTypes";
+import { StackParamList, signUpData } from "../../types/appTypes";
 import { BASE_API_URL } from "../../Api/baseApi";
 import { useDispatch } from "react-redux";
 import { signup } from "../../store/authSlice";
@@ -35,7 +35,7 @@ const SignUp: React.FC<SignUpProps> = ({ navigation }) => {
   });
   const dispatch = useDispatch();
 
-  const onSubmit = async (data: any) => {
+  const onSubmit = async (data: signUpData) => {
     setIsLoading(true);
     try {
       const response = await axios.post(

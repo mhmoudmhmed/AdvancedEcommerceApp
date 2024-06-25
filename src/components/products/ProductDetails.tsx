@@ -1,5 +1,5 @@
 import React from "react";
-import { Text, Button } from "react-native";
+import { Text } from "react-native";
 import { useSelector, useDispatch } from "react-redux";
 import { RootState } from "../../store";
 import { useNavigation, useRoute } from "@react-navigation/native";
