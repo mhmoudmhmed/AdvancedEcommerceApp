@@ -52,8 +52,8 @@ Before you begin, ensure you have met the following requirements:
 
 1. **Clone the repository**:
    ```bash
-   git clone https://github.com/yourusername/ecommerce-app.git
-   cd ecommerce-app
+   git clone https://github.com/mhmoudmhmed/AdvancedEcommerceApp.git
+   cd AdvancedEcommerceApp
 
 2. **Run the application with Android**:
    ```bash
@@ -66,3 +66,13 @@ Before you begin, ensure you have met the following requirements:
    cd ios
    npm start
    react-native run-ios
+
+## Demo Video
+
+[![Demo Video](https://img.youtube.com/vi/YOUR_VIDEO_ID/0.jpg)](https://www.youtube.com/watch?v=YOUR_VIDEO_ID)
+
+## Contributing
+Contributions are welcome! Please read the contributing guidelines to get started.
+
+## License
+This project is licensed under the MIT License - see the LICENSE file for details.
