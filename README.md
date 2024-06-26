@@ -54,3 +54,15 @@ Before you begin, ensure you have met the following requirements:
    ```bash
    git clone https://github.com/yourusername/ecommerce-app.git
    cd ecommerce-app
+
+2. **Run the application with Android**:
+   ```bash
+   npm install
+   react-native run-android
+
+3. **Run the application with IOS**:
+   ```bash
+   sudo gem install cocoapods
+   cd ios
+   npm start
+   react-native run-ios
