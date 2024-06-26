@@ -38,3 +38,12 @@ export type signUpData = {
   confirm_password: string;
   phone_number: string;
 };
+
+export type paymentData = {
+  amount?: number;
+  paymentMethod: string;
+  billingAddress: string;
+  cardName: string;
+  cardNumber: string;
+  cvv: string;
+};

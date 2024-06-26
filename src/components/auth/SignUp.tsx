@@ -4,7 +4,7 @@ import axios from "axios";
 import { StackNavigationProp } from "@react-navigation/stack";
 import styled from "styled-components/native";
 import { StackParamList, signUpData } from "../../types/appTypes";
-import { BASE_API_URL } from "../../Api/baseApi";
+import instanceAPI, { BASE_API_URL } from "../../Api/baseApi";
 import { useDispatch } from "react-redux";
 import { signup } from "../../store/authSlice";
 import { useForm, Controller } from "react-hook-form";
@@ -38,7 +38,7 @@ const SignUp: React.FC<SignUpProps> = ({ navigation }) => {
   const onSubmit = async (data: signUpData) => {
     setIsLoading(true);
     try {
-      const response = await axios.post(
+      const response = await instanceAPI.post(
         `${BASE_API_URL}/0b6c6300?count=1&key=d8691d10`,
         data
       );

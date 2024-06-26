@@ -9,7 +9,7 @@ import {
   StackParamList,
   ValidRouteNames,
 } from "../../types/appTypes";
-import { BASE_API_URL } from "../../Api/baseApi";
+import instanceAPI, { BASE_API_URL } from "../../Api/baseApi";
 import Animated, {
   useSharedValue,
   useAnimatedStyle,
@@ -78,7 +78,7 @@ const Login: React.FC = () => {
   const onSubmit = async (data: LoginData) => {
     setIsLoading(true);
     try {
-      const response = await axios.post(
+      const response = await instanceAPI.post(
         `${BASE_API_URL}/27e5d1d0?count=1&key=d8691d10`,
         data
       );
