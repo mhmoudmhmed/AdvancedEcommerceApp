@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import {
   ActivityIndicator,
-  Button,
+  Alert,
   KeyboardAvoidingView,
   Platform,
 } from "react-native";
@@ -20,22 +20,18 @@ import {
   setBillingAddress,
   setCardInfo,
 } from "../../store/paymentSlice";
-import { paymentData } from "../../types/appTypes";
+import { StackParamList, paymentData } from "../../types/appTypes";
 import { schema } from "./schema/paymentSchema";
-import instanceAPI, { BASE_API_URL } from "../../Api/baseApi";
 import { RootState } from "../../store";
+import { proceedPayment } from "./services/paymentApi";
+import { useNavigation } from "@react-navigation/native";
+import { StackNavigationProp } from "@react-navigation/stack";
 
-const proceedPayment = async (data: paymentData) => {
-  try {
-    await instanceAPI.post(
-      `${BASE_API_URL}a8645bc0?count=3&key=d8691d10`,
-      data
-    );
-  } catch (error) {}
-};
+type PaymentScreenNavigationProp = StackNavigationProp<StackParamList, "Home">;
 
 const PaymentScreen = () => {
   const [isLoading, setIsLoading] = useState<Boolean>(false);
+  const navigation = useNavigation<PaymentScreenNavigationProp>();
 
   const {
     control,
@@ -62,7 +58,25 @@ const PaymentScreen = () => {
       })
     );
     setIsLoading(false);
-    proceedPayment({ ...data, amount: cart?.total });
+    proceedPayment({ ...data, amount: cart?.total })
+      .then(() => {
+        setIsLoading(false);
+        Alert.alert(
+          "Payment Successful",
+          "Your payment has been processed successfully.",
+          [{ text: "OK", onPress: () => navigation.navigate("Home") }],
+          { cancelable: false }
+        );
+      })
+      .catch((error) => {
+        setIsLoading(false);
+        Alert.alert(
+          "Payment Failed",
+          "There was an error processing your payment. Please try again.",
+          [{ text: "OK", onPress: () => console.log("OK Pressed") }],
+          { cancelable: false }
+        );
+      });
   };
 
   const opacity = useSharedValue(0);

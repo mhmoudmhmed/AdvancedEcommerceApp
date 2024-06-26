@@ -1,15 +1,15 @@
-import Constants, { ExecutionEnvironment } from "expo-constants";
+import Constants from "expo-constants";
 
 const getEnvVars = () => {
-  if (Constants.executionEnvironment === ExecutionEnvironment.StoreClient) {
+  if (!Constants.manifest) {
+    // Constants.manifest is undefined in bare workflow
     return {
-      ENCRYPTION_KEY: Constants.expoConfig?.extra?.ENCRYPTION_KEY,
-    };
-  } else {
-    return {
-      ENCRYPTION_KEY: null,
+      ENCRYPTION_KEY: process.env.ENCRYPTION_KEY,
     };
   }
+  return {
+    ENCRYPTION_KEY: Constants.manifest.extra?.ENCRYPTION_KEY,
+  };
 };
 
 export default getEnvVars;

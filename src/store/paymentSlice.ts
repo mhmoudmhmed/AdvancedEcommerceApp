@@ -4,6 +4,9 @@ import getEnvVars from "../../config";
 
 const { ENCRYPTION_KEY }: String | any = getEnvVars();
 
+console.log({ENCRYPTION_KEY});
+
+
 interface PaymentState {
   amount: number;
   paymentMethod: string;
@@ -26,6 +29,8 @@ const encrypt = (data: string, key: string) => {
   if (!data || !key) {
     return "";
   }
+  console.log("encrypt", CryptoJS?.AES?.encrypt(data, key)?.toString());
+  
   return CryptoJS?.AES?.encrypt(data, key)?.toString();
 };
 
@@ -58,7 +63,7 @@ const paymentSlice = createSlice({
         cvv: string;
       }>
     ) => {
-      if (!action.payload || !ENCRYPTION_KEY) {
+      if (!action.payload) {
         return;
       }
       state.cardName = encrypt(action.payload.cardName, ENCRYPTION_KEY);
