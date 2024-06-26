@@ -16,20 +16,24 @@ This is a small e-commerce mobile application built with React Native, TypeScrip
 ## Features
 
 1. **Product Listing**:
+
    - Fetch a list of products from a mock API.
    - Display the products in a scrollable grid or list.
    - Each product displays an image, name, price, and a short description.
 
 2. **Product Details**:
+
    - Navigate to the product details screen when a product is clicked.
    - Display detailed information about the product including images, name, full description, price, and reviews.
 
 3. **Shopping Cart**:
+
    - Allow users to add products to the shopping cart.
    - View the shopping cart with a list of added products, total price, and the ability to remove items.
    - Persist the cart state across app restarts.
 
 4. **User Authentication**:
+
    - Implement user authentication with a mocked backend (sign up, login, logout).
    - Use secure token storage for authentication tokens.
    - Protect certain routes (like the shopping cart) behind authentication.
@@ -51,14 +55,20 @@ Before you begin, ensure you have met the following requirements:
 ## Installation
 
 1. **Clone the repository**:
+
    ```bash
    git clone https://github.com/mhmoudmhmed/AdvancedEcommerceApp.git
    cd AdvancedEcommerceApp
 
+   ```
+
 2. **Run the application with Android**:
+
    ```bash
    npm install
    react-native run-android
+
+   ```
 
 3. **Run the application with IOS**:
    ```bash
@@ -66,13 +76,16 @@ Before you begin, ensure you have met the following requirements:
    cd ios
    npm start
    react-native run-ios
+   ```
 
 ## Demo Video
 
-[![Demo Video](https://player.vimeo.com/video/968799113?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="sTC4JonJAvEn0WO1rvUW1Ad7jYtCHlNgkO9f0Wwz)](https://vimeo.com/968799113)
+(https://player.vimeo.com/video/968799113?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="sTC4JonJAvEn0WO1rvUW1Ad7jYtCHlNgkO9f0Wwz)
 
 ## Contributing
+
 Contributions are welcome! Please read the contributing guidelines to get started.
 
 ## License
+
 This project is licensed under the MIT License - see the LICENSE file for details.
