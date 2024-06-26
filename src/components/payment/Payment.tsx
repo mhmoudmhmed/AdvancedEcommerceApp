@@ -27,13 +27,11 @@ import { RootState } from "../../store";
 
 const proceedPayment = async (data: paymentData) => {
   try {
-    const response = await instanceAPI.post(
+    await instanceAPI.post(
       `${BASE_API_URL}a8645bc0?count=3&key=d8691d10`,
       data
     );
-  } catch (error) {
-    console.error("Error making payment:", error);
-  }
+  } catch (error) {}
 };
 
 const PaymentScreen = () => {

@@ -53,9 +53,7 @@ const ProductList: React.FC = () => {
     try {
       await authDispatch(logout());
       navigation.navigate("Login");
-    } catch (error) {
-      console.error("Failed to logout:", error);
-    }
+    } catch (error) {}
   };
 
   const renderProductItem = ({ item }: { item: Product }) => (

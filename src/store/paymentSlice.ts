@@ -4,8 +4,6 @@ import getEnvVars from "../../config";
 
 const { ENCRYPTION_KEY }: String | any = getEnvVars();
 
-console.log({ ENCRYPTION_KEY });
-
 interface PaymentState {
   amount: number;
   paymentMethod: string;
@@ -26,7 +24,6 @@ const initialState: PaymentState = {
 
 const encrypt = (data: string, key: string) => {
   if (!data || !key) {
-    console.error("Encryption failed: data or key is undefined");
     return "";
   }
   return CryptoJS?.AES?.encrypt(data, key)?.toString();
@@ -34,7 +31,6 @@ const encrypt = (data: string, key: string) => {
 
 const decrypt = (ciphertext: string, key: string) => {
   if (!ciphertext || !key) {
-    console.error("Decryption failed: ciphertext or key is undefined");
     return "";
   }
   const bytes = CryptoJS?.AES?.decrypt(ciphertext, key);
@@ -63,9 +59,6 @@ const paymentSlice = createSlice({
       }>
     ) => {
       if (!action.payload || !ENCRYPTION_KEY) {
-        console.error(
-          "setCardInfo failed: payload or ENCRYPTION_KEY is undefined"
-        );
         return;
       }
       state.cardName = encrypt(action.payload.cardName, ENCRYPTION_KEY);
