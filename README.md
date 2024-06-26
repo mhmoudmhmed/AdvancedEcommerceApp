@@ -80,10 +80,6 @@ Before you begin, ensure you have met the following requirements:
 
 ## Demo Video
 
-```mp4
-https://www.youtube.com/watch?v=Qw5f6r9zJr8
-```
-
 ## Contributing
 
 Contributions are welcome! Please read the contributing guidelines to get started.
