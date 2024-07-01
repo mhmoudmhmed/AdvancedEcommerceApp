@@ -64,10 +64,31 @@ Before you begin, ensure you have met the following requirements:
 
 2. **Run the application with Android**:
 
-   ```bash
-   npm install
-   react-native run-android
+   ### 1. Install Expo CLI
 
+   Expo CLI is a command line utility to interact with the Expo development tools.
+
+   ```bash
+   npm install -g expo-cli
+
+   ### 2. Install eas CLI
+
+   EAS CLI is a command line utility to interact with the eas development tools.
+
+   npm install -g eas-cli
+
+   ### 3. Install dependancies
+
+   Install all the necessary Node.js modules for your project.
+   
+   npm install
+
+   ### 4. Create Android Folder
+
+   This command sets up the Android folder structure for your project.
+   
+   npx expo run:android
+   
    ```
 
 3. **Run the application with IOS**:
