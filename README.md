@@ -64,11 +64,11 @@ Before you begin, ensure you have met the following requirements:
 
 2. **Run the application with Android**:
 
+   ```bash
    ### 1. Install Expo CLI
 
    Expo CLI is a command line utility to interact with the Expo development tools.
 
-   ```bash
    npm install -g expo-cli
 
    ### 2. Install eas CLI
